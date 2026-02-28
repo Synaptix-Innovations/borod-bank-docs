@@ -224,21 +224,21 @@ Runs in ~3 minutes. Blocks merge if any check fails. Configured via branch prote
 
 ```
 ┌─────────┐   ┌──────────────────────────────────────────┐   ┌──────────┐
-│  GitHub  │──►│            Jenkins CI (20+ stages)        │──►│  ArgoCD  │
-│  PR/Push │   │                                          │   │          │
-└─────────┘   │  1. Checkout                              │   │  Auto-   │
-              │  2. [Parallel] Gitleaks + Hadolint +      │   │  sync    │
-              │     Trivy FS + Integration Tests          │   │    │     │
-              │  3. Compile                                │   │    ▼     │
-              │  4. [Parallel] Unit Tests + SonarQube     │   │  Argo    │
-              │  5. Quality Gate (webhook, 5 min)         │   │ Rollouts │
-              │  6. Build JAR + Docker Build & Push       │   │    │     │
-              │  7. [Parallel] Trivy Image + Checkov +    │   │    ▼     │
-              │     SBOM (Syft)                           │   │  Canary  │
-              │  8. Cosign Sign & Attest                  │   │ 10→50→   │
-              │  9. Update CD Repo (image tag)            │   │   100%   │
-              │ 10. Smoke Test + E2E Login                │   │    │     │
-              │ 11. Slack Notification                    │   │    ▼     │
+│  GitHub │──►│            Jenkins CI (20+ stages)       │──►│  ArgoCD  │
+│  PR/Push│   │                                          │   │          │
+└─────────┘   │  1. Checkout                             │   │  Auto-   │
+              │  2. [Parallel] Gitleaks + Hadolint +     │   │  sync    │
+              │     Trivy FS + Integration Tests         │   │    │     │
+              │  3. Compile                              │   │    ▼     │
+              │  4. [Parallel] Unit Tests + SonarQube    │   │  Argo    │
+              │  5. Quality Gate (webhook, 5 min)        │   │ Rollouts │
+              │  6. Build JAR + Docker Build & Push      │   │    │     │
+              │  7. [Parallel] Trivy Image + Checkov +   │   │    ▼     │
+              │     SBOM (Syft)                          │   │  Canary  │
+              │  8. Cosign Sign & Attest                 │   │ 10→50→   │
+              │  9. Update CD Repo (image tag)           │   │   100%   │
+              │ 10. Smoke Test + E2E Login               │   │    │     │
+              │ 11. Slack Notification                   │   │    ▼     │
               └──────────────────────────────────────────┘   │ Rollback │
                                                              │ if >5%   │
                                                              │ errors   │
