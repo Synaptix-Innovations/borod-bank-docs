@@ -16,7 +16,7 @@ A fully automated **GitOps/AIOps platform** built on AWS EKS, featuring a three-
 
 ```
 ┌──────────────────────────────────────────────────────────────────────────────┐
-│                     BOROD BANK — GITOPS / AIOPS PLATFORM                    │
+│                     BOROD BANK — GITOPS / AIOPS PLATFORM                     │
 │                                                                              │
 │  Developer                                                                   │
 │     │                                                                        │
@@ -25,32 +25,32 @@ A fully automated **GitOps/AIOps platform** built on AWS EKS, featuring a three-
 │     │                                                                        │
 │     ▼ merge                                                                  │
 │  Jenkins CI (20+ stages)                                                     │
-│     │  Gitleaks → Hadolint → Trivy → Compile → Test → SonarQube            │
-│     │  → Build → SBOM → Cosign Sign → Push Image → Update CD repo          │
+│     │  Gitleaks → Hadolint → Trivy → Compile → Test → SonarQube              │
+│     │  → Build → SBOM → Cosign Sign → Push Image → Update CD repo            │
 │     │                                                                        │
 │     ▼                                                                        │
-│  ArgoCD (App of Apps — 18 managed apps)                                     │
-│     │  Auto-sync ──► Argo Rollouts (canary 10%→50%→100%)                    │
+│  ArgoCD (App of Apps — 18 managed apps)                                      │
+│     │  Auto-sync ──► Argo Rollouts (canary 10%→50%→100%)                     │
 │     │                    │                                                   │
 │     │                    ▼                                                   │
 │     │             Prometheus AnalysisTemplate                                │
 │     │             (auto-rollback if error rate > 5%)                         │
 │     │                                                                        │
 │     ▼                                                                        │
-│  AWS EKS (Kubernetes 1.32)                                                  │
-│     ├── Spring Boot App (Argo Rollouts, HPA 2-6 replicas)                   │
-│     ├── RDS MySQL 8.4 (encrypted, 7-day backups)                            │
-│     ├── Jenkins Controller + Ephemeral Pod Agents                           │
-│     ├── SonarQube (persistent, gp2-csi)                                     │
-│     ├── Prometheus + Grafana (5 dashboards)                                 │
-│     ├── Kyverno (3 policies) + Cosign Verification                          │
-│     ├── Chaos Mesh (pod-kill, network-delay, stress-cpu)                    │
-│     ├── External Secrets Operator → AWS Secrets Manager                     │
-│     └── AIOps: Claude API + FastAPI gateway (automated code review)         │
+│  AWS EKS (Kubernetes 1.32)                                                   │
+│     ├── Spring Boot App (Argo Rollouts, HPA 2-6 replicas)                    │
+│     ├── RDS MySQL 8.4 (encrypted, 7-day backups)                             │
+│     ├── Jenkins Controller + Ephemeral Pod Agents                            │
+│     ├── SonarQube (persistent, gp2-csi)                                      │ 
+│     ├── Prometheus + Grafana (5 dashboards)                                  │
+│     ├── Kyverno (3 policies) + Cosign Verification                           │
+│     ├── Chaos Mesh (pod-kill, network-delay, stress-cpu)                     │
+│     ├── External Secrets Operator → AWS Secrets Manager                      │
+│     └── AIOps: Claude API + FastAPI gateway (automated code review)          │
 │                                                                              │
-│  Nightly Pipeline (14 stages, 2 AM daily)                                   │
-│     PIT Mutation → ArchUnit → k6 Perf → ZAP DAST → Nuclei → AI Review      │
-│     → 17 metrics → Pushgateway → Prometheus → Grafana                       │
+│  Nightly Pipeline (14 stages, 2 AM daily)                                    │
+│     PIT Mutation → ArchUnit → k6 Perf → ZAP DAST → Nuclei → AI Review        │
+│     → 17 metrics → Pushgateway → Prometheus → Grafana                        │
 │                                                                              │
 │  Monitoring: Prometheus + Grafana + Slack Notifications                      │
 └──────────────────────────────────────────────────────────────────────────────┘
