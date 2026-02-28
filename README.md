@@ -273,6 +273,7 @@ Checkout → Unit Tests + Coverage (JaCoCo 70%)
 | [ADR-003](adr/ADR-003-jcasc-job-dsl.md) | Jenkins Configuration as Code + Job DSL |
 | [ADR-004](adr/ADR-004-kaniko-no-dind.md) | Kaniko over Docker-in-Docker for container builds |
 | [ADR-005](adr/ADR-005-app-of-apps.md) | ArgoCD App of Apps pattern for multi-app management |
+| [ADR-006](adr/ADR-006-claude-api-over-local-llm.md) | Claude API over local LLM (Ollama) for AIOps |
 
 ---
 
