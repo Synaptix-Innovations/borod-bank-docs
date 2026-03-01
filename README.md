@@ -41,7 +41,7 @@ A fully automated **GitOps/AIOps platform** built on AWS EKS, featuring a three-
 │     ├── Spring Boot App (Argo Rollouts, HPA 2-6 replicas)                    │
 │     ├── RDS MySQL 8.4 (encrypted, 7-day backups)                             │
 │     ├── Jenkins Controller + Ephemeral Pod Agents                            │
-│     ├── SonarQube (persistent, gp2-csi)                                      │ 
+│     ├── SonarQube (persistent, gp2-csi)                                      │
 │     ├── Prometheus + Grafana (5 dashboards)                                  │
 │     ├── Kyverno (3 policies) + Cosign Verification                           │
 │     ├── Chaos Mesh (pod-kill, network-delay, stress-cpu)                     │
