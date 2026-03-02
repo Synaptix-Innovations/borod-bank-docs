@@ -304,4 +304,4 @@ Infrastructure can be scaled to zero nodes via ASG while keeping the control pla
 
 **Vlad Vesninsky** — [GitHub](https://github.com/Vlad774)
 
-Built as a solo DevOps project to demonstrate end-to-end platform engineering: from Terraform provisioning through CI/CD pipelines to production monitoring and chaos engineering.
+
