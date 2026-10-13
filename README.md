@@ -48,7 +48,7 @@ A fully automated **GitOps/AIOps platform** built on AWS EKS, featuring a three-
 │     ├── External Secrets Operator → AWS Secrets Manager                      │
 │     └── AIOps: Claude API + FastAPI gateway (automated code review)          │
 │                                                                              │
-│  Nightly Pipeline (14 stages, 2 AM daily)                                    │
+│  Nightly Pipeline (13 stages, 2 AM daily)                                    │
 │     PIT Mutation → ArchUnit → k6 Perf → ZAP DAST → Nuclei → AI Review        │
 │     → 17 metrics → Pushgateway → Prometheus → Grafana                        │
 │                                                                              │
@@ -70,7 +70,7 @@ A fully automated **GitOps/AIOps platform** built on AWS EKS, featuring a three-
 
 ![Jenkins CI](screenshots/Jenkins_CI.png)
 
-### Jenkins Nightly Pipeline — 14 Stages
+### Jenkins Nightly Pipeline — 13 Stages
 
 ![Nightly Pipeline](screenshots/Jenkins_Nightly.png)
 
@@ -104,10 +104,10 @@ A fully automated **GitOps/AIOps platform** built on AWS EKS, featuring a three-
 
 ## Key Features
 
-- **Three-Tier CI/CD** — GitHub Actions (PR gate, 5 jobs) → Jenkins CI (20+ stages) → Jenkins Nightly (14-stage deep analysis)
+- **Three-Tier CI/CD** — GitHub Actions (PR gate, 5 jobs) → Jenkins CI (20+ stages) → Jenkins Nightly (13-stage deep analysis)
 - **Full GitOps with ArgoCD App of Apps** — 18 applications managed declaratively, auto-synced from Git
 - **Jenkins CI: 20+ stage pipeline** — Gitleaks, Hadolint, Trivy (FS + image), SonarQube, Checkov, SBOM (Syft), Cosign signing
-- **Nightly Regression: 14 stages** — PIT mutation testing, ArchUnit architecture tests, k6 performance, ZAP DAST, Nuclei pen testing, AI-powered code review
+- **Nightly Regression: 13 stages** — PIT mutation testing, ArchUnit architecture tests, k6 performance, ZAP DAST, Nuclei pen testing, AI-powered code review
 - **Canary Deployments** — Argo Rollouts with Prometheus-based AnalysisTemplate, auto-rollback on >5% error rate
 - **Monitoring Stack** — Prometheus + Grafana with 5 provisioned dashboards and 17 nightly pipeline metrics via Pushgateway
 - **AIOps Code Review** — Claude API (Haiku) + FastAPI gateway, automated nightly analysis with Slack reporting
@@ -198,7 +198,7 @@ This project is split across 5 repositories:
 | Repository | Description |
 |---|---|
 | **[borod-bank-docs](https://github.com/Synaptix-Innovations/borod-bank-docs)** | Documentation, screenshots, ADRs, SLOs (this repo) |
-| **[borod-bank-ci](https://github.com/Synaptix-Innovations/borod-bank-ci)** | Spring Boot app + Jenkinsfile (20+ stages) + Jenkinsfile.nightly (14 stages) |
+| **[borod-bank-ci](https://github.com/Synaptix-Innovations/borod-bank-ci)** | Spring Boot app + Jenkinsfile (20+ stages) + Jenkinsfile.nightly (13 stages) |
 | **[borod-bank-cd](https://github.com/Synaptix-Innovations/borod-bank-cd)** | Kubernetes manifests + ArgoCD App of Apps (18 apps) |
 | **[borod-bank-infra](https://github.com/Synaptix-Innovations/borod-bank-infra)** | Terraform IaC: VPC, EKS, RDS, KMS, EFS, IRSA (1,300+ lines) |
 | **[jenkins-setup](https://github.com/Synaptix-Innovations/jenkins-setup)** | Custom Jenkins controller image: Dockerfile + JCasC + GitHub Actions |
